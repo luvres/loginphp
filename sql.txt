@@ -1,0 +1,63 @@
+# MariaDB
+#---------
+docker run --name MariaDB \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=maria \
+-d mariadb
+
+CREATE DATABASE `teste`;
+
+CREATE TABLE `teste`.`usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tipo` INT NOT NULL COMMENT '1 - Administrador \n2 - Usuário',
+  `nome` VARCHAR(45) NOT NULL,
+  `login` VARCHAR(45) NOT NULL,
+  `senha` CHAR(40) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `login_UNIQUE` (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `teste`.`usuarios` (`tipo`, `nome`, `login`, `senha`) VALUES ('1', 'Administrador', 'admin', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+
+
+# Postgres
+#----------
+docker run --name Postgres -h postgres \
+-p 5432:5432 \
+-e POSTGRES_PASSWORD=postgres \
+-d postgres:alpine
+
+CREATE DATABASE dbzone;
+
+DROP TABLE IF EXISTS usuarios;
+CREATE TABLE usuarios (
+  id SERIAL PRIMARY KEY NOT NULL,
+  tipo INT NOT NULL,
+  nome VARCHAR(45) NOT NULL,
+  login VARCHAR(45) UNIQUE NOT NULL,
+  senha CHAR(40) NOT NULL
+);
+
+\d usuarios;
+
+INSERT INTO usuarios(tipo, nome, login, senha) VALUES ('1', 'Administrador', 'admin', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+SELECT * FROM usuarios;
+
+
+# Lighttpd - PHP 7.1
+#--------------------
+docker run --rm --name Php -h php \
+--link MariaDB:mariadb-host \
+-p 800:80 \
+-v $HOME/1uvr3z/Login_PHP:/var/www \
+-ti izone/alpine:php
+
+
+# Apache
+#-----------
+docker run --rm --name Php -h php \
+--link MariaDB:mariadb-host \
+-p 800:80 \
+-v $HOME/1uvr3z/Login_PHP:/var/www/html \
+-ti izone/php:ext
+
