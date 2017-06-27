@@ -44,6 +44,17 @@ INSERT INTO usuarios(tipo, nome, login, senha) VALUES ('1', 'Administrador', 'ad
 SELECT * FROM usuarios;
 
 
+# OracleXE
+#----------
+docker run --name OracleXE -h oraclexe \
+-p 1521:1521 \
+-d izone/oracle
+
+docker logs -f OracleXE
+
+docker exec -ti OracleXE sqlplus sys/oracle as sysdba
+
+
 # Lighttpd - PHP 7.1
 #--------------------
 docker run --rm --name Php -h php \
