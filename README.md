@@ -33,6 +33,7 @@ docker exec -ti Postgres bash -c "psql -U postgres"
 docker run --rm --name Php -h php \
 --link MariaDB:mariadb-host \
 --link Postgres:postgres-host \
+--link OracleXE:oraclexe-host \
 -p 800:80 \
 -v $HOME/1uvr3z/Login_PHP:/var/www \
 -ti izone/alpine:php
