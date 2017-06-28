@@ -55,6 +55,24 @@ docker logs -f OracleXE
 docker exec -ti OracleXE sqlplus sys/oracle as sysdba
 
 
+# SQLServer
+#-----------
+docker run --name SQLServer -h sqlserver \
+-e 'ACCEPT_EULA=Y' \
+-e 'SA_PASSWORD=AAmu02+aamu02' \
+-p 1433:1433 \
+-d microsoft/mssql-server-linux
+
+docker logs -f SQLServer
+
+docker exec -ti SQLServer /opt/mssql-tools/bin/sqlcmd -?
+
+docker exec -ti SQLServer /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P AAmu02+aamu02
+SELECT @@VERSION
+go
+
+
+
 # Lighttpd - PHP 7.1
 #--------------------
 docker run --rm --name Php -h php \
