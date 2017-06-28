@@ -2,8 +2,8 @@
 
 //require("../conMariaDB.php");
 //require("../conPostgres.php");
-//require("../conOracle.php");
-require("../conSQLServer.php");
+require("../conOracle.php");
+//require("../conSQLServer.php");
 
 
 conexao::getConnect();
