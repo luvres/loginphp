@@ -36,7 +36,7 @@ docker run --rm --name Php -h php \
 --link OracleXE:oraclexe-host \
 --link SQLServer:sqlserver-host \
 -p 800:80 \
--v $HOME/1uvr3z/Login_PHP:/var/www \
+-v $HOME/1uvr3z/loginphp:/var/www \
 -ti izone/alpine:php
 ```
 ### Browser access

@@ -2,12 +2,12 @@
 <?php
 
 class conexao{
-	private static $dbtype   = "odbc";
+	private static $dbtype   = "odbc:Driver={SQL Native Client}";
 	private static $host     = "sqlserver-host";
 	private static $port     = "1433";
 	private static $user     = "sa";
 	private static $password = "AAmu02+aamu02";
-	private static $db       = "teste";
+	private static $db       = "dbzone";
 	public  static $connect;
 
 	private function __construct() {} /* Evita que a classe seja instanciada publicamente */

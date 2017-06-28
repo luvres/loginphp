@@ -70,6 +70,8 @@ docker exec -ti SQLServer /opt/mssql-tools/bin/sqlcmd -?
 docker exec -ti SQLServer /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P AAmu02+aamu02
 SELECT @@VERSION
 go
+SELECT NAME FROM SYS.DATABASES
+go
 
 
 
@@ -78,7 +80,7 @@ go
 docker run --rm --name Php -h php \
 --link MariaDB:mariadb-host \
 -p 800:80 \
--v $HOME/1uvr3z/Login_PHP:/var/www \
+-v $HOME/1uvr3z/loginphp:/var/www \
 -ti izone/alpine:php
 
 
@@ -87,6 +89,6 @@ docker run --rm --name Php -h php \
 docker run --rm --name Php -h php \
 --link MariaDB:mariadb-host \
 -p 800:80 \
--v $HOME/1uvr3z/Login_PHP:/var/www/html \
+-v $HOME/1uvr3z/loginphp:/var/www/html \
 -ti izone/php:ext
 
