@@ -25,10 +25,9 @@ class conexao{
 				//se houver exceção, exibe
 				die("Connect Fail ... : <code>" . utf8_encode($e->getMessage()) . "</code>");
 			}
-        }
-
-        return self::$connect;
     }
+    return self::$connect;
+  }
 }
 
 //include_once("./model/dao/baseDAO.php");
