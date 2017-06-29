@@ -5,6 +5,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/estilo.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.icon-large.min.css">
 </head>
 <body>
     <div id="form-container">

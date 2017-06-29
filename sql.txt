@@ -27,7 +27,13 @@ docker run --name Postgres -h postgres \
 -e POSTGRES_PASSWORD=postgres \
 -d postgres:alpine
 
+docker exec -ti Postgres bash -c "psql -U postgres"
+
+SELECT datname FROM pg_database;
+
+DROP DATABASE IF EXISTS dbzone;
 CREATE DATABASE dbzone;
+\c dbzone
 
 DROP TABLE IF EXISTS usuarios;
 CREATE TABLE usuarios (
@@ -91,4 +97,3 @@ docker run --rm --name Php -h php \
 -p 800:80 \
 -v $HOME/1uvr3z/loginphp:/var/www/html \
 -ti izone/php:ext
-
