@@ -8,7 +8,7 @@ git clone https://github.com/luvres/loginphp.git
 ```
 ### PHPMailer
 ```
-git clone https://github.com/PHPMailer/PHPMailer.git loginphp/PHPMailer
+git clone https://github.com/PHPMailer/PHPMailer.git loginphp/mailer
 ```
 ### Database MySQL (MariaDB)
 ```
