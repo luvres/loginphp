@@ -19,7 +19,7 @@ class conexao{
 			try {
 				$dsn = self::$dbtype.":host=".self::$host.";port=".self::$port.";dbname=".self::$db;
 				self::$connect = new PDO($dsn, self::$user, self::$password);
-				echo "MariaDB (PDO) -> Connect!";
+				echo "MariaDB [PDO] -> Connect!";
 			} catch (PDOException $e) {
 				//se houver exceção, exibe
 				die("Connect Fail ... : <code>" . utf8_encode($e->getMessage()) . "</code>");
