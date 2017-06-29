@@ -6,6 +6,10 @@
 ```
 git clone https://github.com/luvres/loginphp.git
 ```
+### PHPMailer
+```
+git clone https://github.com/PHPMailer/PHPMailer.git loginphp/PHPMailer
+```
 ### Database MySQL (MariaDB)
 ```
 docker run --name MariaDB \
