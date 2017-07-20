@@ -5,7 +5,8 @@ docker run --name MariaDB \
 -e MYSQL_ROOT_PASSWORD=maria \
 -d mariadb
 
-CREATE DATABASE `teste`;
+DROP DATABASE IF EXISTS `teste`;
+CREATE DATABASE IF NOT EXISTS `teste`;
 
 CREATE TABLE `teste`.`usuarios` (
   `id` INT NOT NULL AUTO_INCREMENT,
