@@ -5,7 +5,7 @@ setlocale(LC_ALL, "pt_BR", "ptb");
 // header("Content-type: text/html; charset=utf-8");
 error_reporting(E_ALL);
 
-//require("conMariaDB.php");
-require("conPostgres.php");
+require("conMariaDB.php");
+//require("conPostgres.php");
 
 include_once("./model/dao/baseDAO.php");
