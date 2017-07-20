@@ -13,7 +13,7 @@ git clone https://github.com/PHPMailer/PHPMailer.git loginphp/email/mailer
 ### Database MySQL (MariaDB)
 ```
 docker run --name MariaDB \
--p 3308:3306 \
+-p 3306:3306 \
 -e MYSQL_ROOT_PASSWORD=maria \
 -d mariadb
 ```
